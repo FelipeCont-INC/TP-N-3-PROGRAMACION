@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Stock - Inicio</title>
+    
+    <style>
+        /* Reseteo General */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Fondo general oscuro azulado */
+        body {
+            background-color: #0f172a;
+            color: #f1f5f9;
+            padding: 20px;
+        }
+
+        /* Encabezado con Flexbox */
+        header {
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;             
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #334155;
+        }
+
+        .logo-container {
+            display: flex;             
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-container img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            background: #0f172a;
+            padding: 5px;              
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        /* Menú de Navegación */
+        nav ul {
+            list-style: none;
+            display: flex;             
+            gap: 10px;
+        }
+
+        nav ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+            background-color: #0f172a;
+        }
+
+        nav ul li a.active {
+            color: #ffffff;
+            background-color: #3b82f6;
+        }
+
+        /* Contenedor Principal Ajustado (Ancho completo y elegante) */
+        main {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #334155; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Migas de pan oscuras */
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 25px;       
+            background: #0f172a;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .breadcrumbs a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .bienvenida p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        /* Tablas en Modo Oscuro */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #1e293b;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+        }
+
+        th {
+            background-color: #0f172a;
+            color: #3b82f6;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            color: #e2e8f0;
+        }
+
+        /* Hover resalta la fila en un tono más claro */
+        tr:hover td {
+            background-color: #24324d;
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo oficial de Multirubro Control" title="Panel Principal de Navegación">
+            <h1>Multirubro Control</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="gestion.html">Gestión de Stock</a></li>
+                <li><a href="ventas.html">Ventas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="breadcrumbs">
+            <p>Inicio</p>
+        </section>
+
+        <section class="bienvenida">
+            <h2>Panel de Productos Destacados</h2>
+            <p>Visualización rápida de stock para los rubros de Kiosco, Librería y Regalería.</p>
+        </section>
+
+        <section class="tabla-productos">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Rubro</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Caramelos Misky x100</td>
+                        <td>Kiosco</td>
+                        <td>$1500.00</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Cuaderno Universitario A4</td>
+                        <td>Librería</td>
+                        <td>$3200.00</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Portarretrato de Madera</td>
+                        <td>Regalería</td>
+                        <td>$4500.00</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Gaseosa Cola 500ml</td>
+                        <td>Kiosco</td>
+                        <td>$1200.00</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>Lapicera Azul Trazo Fino</td>
+                        <td>Librería</td>
+                        <td>$400.00</td>
+                        <td>85</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Laboratorio de Programación - 6to G</p>
+    </footer>
+</body>
+</html>

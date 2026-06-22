@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Stock - Ventas</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f1f5f9;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: flex;             
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #334155;
+        }
+
+        .logo-container {
+            display: flex;             
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Foto del logo reducida a 35px */
+        .logo-container img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            background: #0f172a;
+            padding: 4px;              
+            border-radius: 6px;
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;             
+            gap: 10px;
+        }
+
+        nav ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+            background-color: #0f172a;
+        }
+
+        nav ul li a.active {
+            color: #ffffff;
+            background-color: #3b82f6;
+        }
+
+        main {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #334155; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 25px;       
+            background: #0f172a;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .breadcrumbs a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .tabla-ventas, .pagos-cuenta {
+            margin-bottom: 35px;
+        }
+
+        /* Estructura de Tablas en ventas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #1e293b;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+        }
+
+        th {
+            background-color: #0f172a;
+            color: #3b82f6;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            color: #e2e8f0;
+        }
+
+        tr:hover td {
+            background-color: #24324d;
+        }
+
+        /* Bloques de la Lista de Pagos a Cuenta Mejorados */
+        .pagos-cuenta ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .pagos-cuenta li {
+            padding: 14px 20px;
+            background: #0f172a;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            border-top: 1px solid #233044;
+            border-right: 1px solid #233044;
+            border-bottom: 1px solid #233044;
+        }
+
+        .saldo-deudor {
+            color: #f87171;
+            font-weight: bold;
+        }
+
+        .saldo-al-dia {
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo oficial de Multirubro Control" title="Panel de Historial de Ventas">
+            <h1>Multirubro Control</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="gestion.html">Gestión de Stock</a></li>
+                <li><a href="ventas.html" class="active">Ventas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="breadcrumbs">
+            <p><a href="index.html">Inicio</a> &gt; Ventas</p>
+        </section>
+
+        <section class="tabla-ventas">
+            <h2>Historial de Transacciones</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>22/06/2026</td>
+                        <td>Gaseosa Cola 500ml</td>
+                        <td>2</td>
+                        <td>$2400.00</td>
+                    </tr>
+                    <tr>
+                        <td>22/06/2026</td>
+                        <td>Cuaderno Universitario A4</td>
+                        <td>1</td>
+                        <td>$3200.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="pagos-cuenta">
+            <h2>Pagos a Cuenta (Clientes Frecuentes)</h2>
+            <ul>
+                <li>
+                    <span>Carlos Gómez (Último movimiento: 18/06)</span>
+                    <span class="saldo-deudor">Saldo Deudor: $1500.00</span>
+                </li>
+                <li>
+                    <span>María Rodriguez (Último movimiento: 20/06)</span>
+                    <span class="saldo-deudor">Saldo Deudor: $450.00</span>
+                </li>
+                <li>
+                    <span>Juan López</span>
+                    <span class="saldo-al-dia">Al día</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Laboratorio de Programación - 6to G</p>
+    </footer>
+</body>
+</html>

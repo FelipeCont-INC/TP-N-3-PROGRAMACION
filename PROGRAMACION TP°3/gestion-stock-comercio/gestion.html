@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Stock - Administrar</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f1f5f9;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: flex;             
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #334155;
+        }
+
+        .logo-container {
+            display: flex;             
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Foto del logo achicada a 35px para que no sea enorme */
+        .logo-container img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            background: #0f172a;
+            padding: 4px;              
+            border-radius: 6px;
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;             
+            gap: 10px;
+        }
+
+        nav ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+            background-color: #0f172a;
+        }
+
+        nav ul li a.active {
+            color: #ffffff;
+            background-color: #3b82f6;
+        }
+
+        main {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #334155; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 25px;       
+            background: #0f172a;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .breadcrumbs a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #94a3b8;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .btn-guardar {
+            background-color: #3b82f6;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-guardar:hover {
+            background-color: #2563eb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo oficial de Multirubro Control" title="Panel de Carga de Mercadería">
+            <h1>Multirubro Control</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="gestion.html" class="active">Gestión de Stock</a></li>
+                <li><a href="ventas.html">Ventas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="breadcrumbs">
+            <p><a href="index.html">Inicio</a> &gt; Gestión de Stock</p>
+        </section>
+
+        <section class="formulario-seccion">
+            <h2>Agregar / Editar Producto</h2>
+            <form action="#" method="POST" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="nombre">Nombre del Producto:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Regla 30cm" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rubro">Rubro:</label>
+                    <select id="rubro" name="rubro" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="kiosco">Kiosco</option>
+                        <option value="libreria">Librería</option>
+                        <option value="regaleria">Regalería</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio ($):</label>
+                    <input type="number" id="precio" name="precio" step="0.01" placeholder="0.00" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stock">Cantidad en Stock:</label>
+                    <input type="number" id="stock" name="stock" placeholder="0" required>
+                </div>
+
+                <button type="submit" class="btn-guardar" style="background-color: #2563eb; border: 2px solid #0f172a;">Guardar Producto</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Laboratorio de Programación - 6to G</p>
+    </footer>
+</body>
+</html>
