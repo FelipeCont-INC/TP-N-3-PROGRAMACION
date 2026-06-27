@@ -1,0 +1,202 @@
+/* ==========================================================================
+   1. RESETEO Y ESTILOS GENERALES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN (Uso obligatorio de Flexbox)
+   ========================================================================== */
+header {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;             
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;             
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-container img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    background: #1e293b;
+    padding: 5px;              
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;             
+    gap: 10px;
+}
+
+nav ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    background-color: #1e293b;
+}
+
+nav ul li a.active {
+    color: #ffffff;
+    background-color: #3b82f6;
+}
+
+/* ==========================================================================
+   3. ESTRUCTURA DEL CONTENIDO PRINCIPAL
+   ========================================================================== */
+main {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0; 
+}
+
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 25px;       
+    background: #f1f5f9;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.breadcrumbs a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   4. COMPONENTES: FORMULARIOS (gestion.html)
+   ========================================================================== */
+form {
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #475569;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+}
+
+.btn-guardar {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   5. COMPONENTES: TABLAS (index.html y ventas.html)
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+th {
+    background-color: #f8fafc;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+tr:hover td {
+    background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   6. COMPONENTES: LISTAS (ventas.html)
+   ========================================================================== */
+.pagos-cuenta ul {
+    list-style: none;
+}
+
+.pagos-cuenta li {
+    padding: 12px;
+    background: #f8fafc;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6; 
+}
+
+/* ==========================================================================
+   7. PIE DE PÁGINA
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
